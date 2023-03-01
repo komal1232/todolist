@@ -3,11 +3,11 @@ export default function Note(Props) {
   const [headding, setHeadding] = useState(Props.headding);
   const [content, setContent] = useState(Props.content);
   const [editable, setEditable] = useState(false);
-//   onSaveClick = () => {
-//     console.log("onSaveClick button ");
-//     setEditable(false);
-//     Props.saveNote();
-//   };
+ const onSaveClick = () => {
+    console.log("onSaveClick button ");
+    setEditable(false);
+    Props.saveNote();
+  };
 const onEditClick =  () => {
   setEditable(true)
     console.log("hii")
@@ -40,7 +40,7 @@ const onEditClick =  () => {
       <button className="Buttons" onClick={onEditClick}>
         edit
       </button>
-      <button className="Buttons" /*onClick={this.onSaveClick}*/>
+      <button className="Buttons" onClick={onSaveClick}>
         save
       </button>
     </div>
