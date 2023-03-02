@@ -2,6 +2,7 @@ import './App.css';
 import Note from './containers/Note';
 import { useEffect, useState } from 'react';
 import AddNote from './containers/AddNote';
+import ShowNotes from './containers/ShowNotes';
 // const NotesObj = {
 //   Notes: [{ headding: "headding", content: "contents is " }]
 // };
@@ -9,15 +10,20 @@ import AddNote from './containers/AddNote';
 function App() {
   const [note,setNote] = useState({})
   useEffect(()=>{
+  //console.log("localstorage",localStorage.getItem("x"))
   //let notesString=localStorage.getItem("notes")
-  //let notesObject = JSON.parse(notesString)
- // notesObject.notesList = notesObject.notesList
   if(JSON.stringify(note)!=="{}"){
-  console.log("note is",note)
-  let notesObject ={notesList:[]}
+  if(!localStorage.getItem("notes")){
+    let notesObject ={notesList:[]}
+    notesObject.notesList.push(note)
+    localStorage.setItem("notes",JSON.stringify(notesObject))
+  }
+  else{
+  let notesString =localStorage.getItem("notes")
+  let notesObject = JSON.parse(notesString)
   notesObject.notesList.push(note)
   localStorage.setItem("notes",JSON.stringify(notesObject))
- // console.log("localstorage",localStorage.getItem("notes"))
+  }
   }
   },[note])
   const saveNote = (note) => {
@@ -28,6 +34,7 @@ function App() {
     <div className="App">
       {/* <Note headding= {notes.Notes[0].headding} content={notes.Notes[0].content} saveNote = {saveNote} /> */}
       <AddNote saveNote ={saveNote}/>
+      <ShowNotes/>
     </div>
   );
 }
