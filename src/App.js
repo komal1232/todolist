@@ -12,10 +12,13 @@ function App() {
   //let notesString=localStorage.getItem("notes")
   //let notesObject = JSON.parse(notesString)
  // notesObject.notesList = notesObject.notesList
+  if(JSON.stringify(note)!=="{}"){
+  console.log("note is",note)
   let notesObject ={notesList:[]}
   notesObject.notesList.push(note)
   localStorage.setItem("notes",JSON.stringify(notesObject))
-  console.log("localstorage",localStorage.getItem("notes"))
+ // console.log("localstorage",localStorage.getItem("notes"))
+  }
   },[note])
   const saveNote = (note) => {
     setNote(note)
@@ -30,3 +33,4 @@ function App() {
 }
 
 export default App;
+

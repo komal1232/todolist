@@ -6,7 +6,7 @@ export default function Note(Props) {
  const onSaveClick = () => {
    
     Props.saveNote(content);
-    console.log("onSaveClick button ");
+   // console.log("onSaveClick button ");
     setEditable(false);
     
   };
