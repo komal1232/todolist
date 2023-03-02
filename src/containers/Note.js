@@ -4,19 +4,18 @@ export default function Note(Props) {
   const [content, setContent] = useState(Props.content);
   const [editable, setEditable] = useState(false);
  const onSaveClick = () => {
+   
+    Props.saveNote(content);
     console.log("onSaveClick button ");
     setEditable(false);
-    Props.saveNote();
+    
   };
 const onEditClick =  () => {
   setEditable(true)
-    console.log("hii")
-
  }
   
  const onInputChange = (e) => {
     setContent(e.target.value);
-    console.log("onInputChange", e.target.value);
   };
   return (
     <div /*className="NoteBox" */>
@@ -33,7 +32,7 @@ const onEditClick =  () => {
         </>
       ) : (
         <>
-          <h3> {content} </h3>
+          <h3> {Props.content} </h3>
         </>
       )}
 
