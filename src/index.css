@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.noteBox {
+  border-style: solid;
+  border-color: blue;
+  border-width: 3px;
+  text-align: center;
+  width: 200px;
+  padding: 5px;
+  align-items: center;
+  justify-self: center
+}

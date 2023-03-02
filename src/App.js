@@ -31,9 +31,10 @@ function App() {
   };
   
   return (
-    <div className="App">
+    <div>
       {/* <Note headding= {notes.Notes[0].headding} content={notes.Notes[0].content} saveNote = {saveNote} /> */}
-      <AddNote saveNote ={saveNote}/>
+      {/* <AddNote saveNote ={saveNote}/> */}
+      <div>hii</div>
       <ShowNotes/>
     </div>
   );

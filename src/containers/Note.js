@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../index.css'
 export default function Note(Props) {
   const [headding, setHeadding] = useState(Props.headding);
   const [content, setContent] = useState(Props.content);
@@ -18,7 +19,7 @@ const onEditClick =  () => {
     setContent(e.target.value);
   };
   return (
-    <div /*className="NoteBox" */>
+    <div className="noteBox" >
       <h1> {headding} </h1>
       {editable === true ? (
         <>
