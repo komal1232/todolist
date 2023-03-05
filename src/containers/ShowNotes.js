@@ -10,10 +10,15 @@ const data = {noteList: [{ heading: "heading1", content: "content1" },
     { heading: "heading7", content: "content7" }
     ]}
 export default function ShowNotes(props){
-    
+    // console.log("hii",JSON.parse(localStorage.getItem("notes")))
+    // console.log("hii2",data)
+    // const x= JSON.parse(localStorage.getItem("notes"))
     return(
         <>
-        {data.noteList.map(element=> <Note headding={element.heading} content ={element.content}/>)}
+        {JSON.parse(localStorage.getItem("notes")).notesList.map(element=> { 
+            console.log("element is",element)
+            return <Note headding={element.heading} content ={element.content}/>
+        })}
         </>
     )
 }
