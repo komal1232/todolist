@@ -16,10 +16,13 @@ code {
   border-style: solid;
   border-color: blue;
   border-width: 3px;
-  text-align: center;
-  width: 200px;
-  padding: 5px;
+  /* text-align: center; */
+  width: 400px;
+  /* padding: 5px; */
   /* align-items: center;
   justify-self: center; */
-  /* margin-left: 90px; */
+  margin: 20px;
+  margin-left: 690px;
+ 
+
 }

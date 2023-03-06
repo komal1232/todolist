@@ -4,7 +4,11 @@ export default function AddNote (props){
     const [headding,setHeadding]= useState("")
     const [content,setContent]= useState("")
     const onSaveClick = () => {
+        if(headding!="" && content!=""){
         props.saveNote({headding,content})
+        setHeadding("")
+        setContent("")
+        }
       };
     const onHeadingChange = (e) =>{
         setHeadding(e.target.value)

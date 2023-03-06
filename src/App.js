@@ -1,4 +1,5 @@
 import './App.css';
+import '././index.css'
 import Note from './containers/Note';
 import { useEffect, useState } from 'react';
 import AddNote from './containers/AddNote';
@@ -31,9 +32,10 @@ function App() {
   };
   
   return (
-    <div>
+    <div className='App'>
       {/* <Note headding= {notes.Notes[0].headding} content={notes.Notes[0].content} saveNote = {saveNote} /> */}
       {/* <AddNote saveNote ={saveNote}/> */}
+      <AddNote saveNote ={saveNote}/>
       <div>hii</div>
       <ShowNotes/>
     </div>

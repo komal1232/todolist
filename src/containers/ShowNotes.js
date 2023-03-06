@@ -15,10 +15,9 @@ export default function ShowNotes(props){
     // const x= JSON.parse(localStorage.getItem("notes"))
     return(
         <>
-        {JSON.parse(localStorage.getItem("notes")).notesList.map(element=> { 
-            console.log("element is",element)
-            return <Note headding={element.heading} content ={element.content}/>
-        })}
+        { localStorage.getItem("notes")!=='{}' ? JSON.parse(localStorage.getItem("notes")).notesList.map(element=> { 
+            return <Note headding={element.headding} content ={element.content}/>
+        }):null}
         </>
     )
 }
